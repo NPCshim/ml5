@@ -79,8 +79,8 @@ async function getVideo(){
   videoElement.height = height;
   document.body.appendChild(videoElement);
 
-  // Create a webcam capture
-    const capture = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+  // Create a rear cam capture
+    const capture = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
   videoElement.srcObject = capture;
   videoElement.play();
 
